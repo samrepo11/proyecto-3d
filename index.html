@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Prueba QR 3D</title>
-  <script type="module" src="https://unpkg.com"></script>
-  <style>
-    body { margin: 0; font-family: sans-serif; }
-    model-viewer { width: 100vw; height: 100vh; background-color: #f0f0f0; }
-    .info-card {
-      position: absolute; bottom: 20px; left: 20px; right: 20px;
-      background: white; padding: 15px; border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi QR 3D</title>
+    <!-- Cargamos la librería oficial -->
+    <script type="module" src="https://googleapis.com"></script>
+    <style>
+        body { margin: 0; padding: 0; background-color: #f5f5f5; }
+        model-viewer {
+            width: 100vw;
+            height: 80vh; /* Ocupa casi toda la pantalla */
+            --poster-color: transparent;
+        }
+        .info {
+            height: 20vh;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Usamos un modelo de ejemplo de Google -->
-  <model-viewer 
-     src="https://modelviewer.dev" 
-    ar ar-modes="webxr scene-viewer quick-look" 
-    camera-controls 
-    shadow-intensity="1" 
-    auto-rotate>
-    
-    <div class="info-card">
-      <h2 style="margin:0">Astronauta 3D</h2>
-      <p style="margin:5px 0 0; color: #666;">Este es un modelo de prueba. Escanea el QR para verlo en tu sala con Realidad Aumentada.</p>
-    </div>
+    <!-- El componente 3D -->
+    <model-viewer 
+        src="https://modelviewer.dev" 
+        ar 
+        ar-modes="webxr scene-viewer quick-look" 
+        camera-controls 
+        auto-rotate 
+        shadow-intensity="1"
+        alt="Un astronauta 3D">
+        
+        <!-- Botón para ver en AR (solo aparece en móviles compatibles) -->
+        <button slot="ar-button" style="background-color: #007bff; color: white; border-radius: 8px; border: none; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); padding: 12px 24px; font-weight: bold;">
+            🚀 VER EN MI SALA
+        </button>
+    </model-viewer>
 
-  </model-viewer>
+    <div class="info">
+        <h2 style="margin:0">Astronauta Explorador</h2>
+        <p>Escanea y proyecta este modelo 3D en tu entorno real.</p>
+    </div>
 
 </body>
 </html>
+

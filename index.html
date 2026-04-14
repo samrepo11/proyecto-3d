@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi QR 3D</title>
     <!-- Cargamos la librería oficial -->
-    <script type="module" src="https://googleapis.com"></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"></script>
     <style>
         body { margin: 0; padding: 0; background-color: #f5f5f5; }
         model-viewer {
@@ -26,20 +26,11 @@
 <body>
 
     <!-- El componente 3D -->
-    <model-viewer 
-        src="https://modelviewer.dev" 
-        ar 
-        ar-modes="webxr scene-viewer quick-look" 
-        camera-controls 
-        auto-rotate 
-        shadow-intensity="1"
-        alt="Un astronauta 3D">
-        
-        <!-- Botón para ver en AR (solo aparece en móviles compatibles) -->
-        <button slot="ar-button" style="background-color: #007bff; color: white; border-radius: 8px; border: none; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); padding: 12px 24px; font-weight: bold;">
-            🚀 VER EN MI SALA
-        </button>
-    </model-viewer>
+ <model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" 
+     src="shared-assets/models/NeilArmstrong.glb" 
+     ar environment-image="shared-assets/environments/moon_1k.hdr" 
+     poster="shared-assets/models/NeilArmstrong.webp" 
+     shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
 
     <div class="info">
         <h2 style="margin:0">Astronauta Explorador</h2>

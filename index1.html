@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba QR 3D</title>
+  <script type="module" src="https://googleapis.com"></script>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    model-viewer { width: 100vw; height: 100vh; background-color: #f0f0f0; }
+    .info-card {
+      position: absolute; bottom: 20px; left: 20px; right: 20px;
+      background: white; padding: 15px; border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Usamos un modelo de ejemplo de Google -->
+  <model-viewer 
+     src="https://modelviewer.dev" 
+    ar ar-modes="webxr scene-viewer quick-look" 
+    camera-controls 
+    shadow-intensity="1" 
+    auto-rotate>
+    
+    <div class="info-card">
+      <h2 style="margin:0">Astronauta 3D</h2>
+      <p style="margin:5px 0 0; color: #666;">Este es un modelo de prueba. Escanea el QR para verlo en tu sala con Realidad Aumentada.</p>
+    </div>
+
+  </model-viewer>
+
+</body>
+</html>
